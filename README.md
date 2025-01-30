@@ -16,5 +16,5 @@ Welcome to thee W0rst-virtual assistant ! This project utilizes Python to create
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/speech-recognition-assistant.git
+   git clone https://github.com/Chico-wh/W0rst_chatbot
 
