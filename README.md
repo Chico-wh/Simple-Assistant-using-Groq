@@ -1,20 +1,59 @@
 # W0rst_chatbot
 # Speech Recognition Assistant
 
-Welcome to thee W0rst-virtual assistant ! This project utilizes Python to create a voice-controlled assistant that can recognize speech, respond with text-to-speech, and perform various tasks such as web searches, providing the current time, and more.
+Este projeto é um assistente virtual controlado por voz chamado Miku. O Miku pode executar várias tarefas baseadas em comandos de voz, como pesquisar na web, abrir sites, agendar compromissos e tocar música.
 
-## Features
+Funcionalidades
+Reconhecimento de Fala: Utiliza a biblioteca speech_recognition para interpretar comandos de voz.
 
-- **Speech Recognition**: Uses the `speech_recognition` library to capture and interpret spoken commands.
-- **Text-to-Speech**: Utilizes the `pyttsx3` library to provide audio feedback.
-- **Web Browser Integration**: Opens web pages based on spoken commands.
-- **System Commands**: Can shutdown the computer based on voice commands.
-- **Time Announcements**: Tells the current time when asked.
-- **Interactive Responses**: Responds to specific phrases with pre-defined messages.
+Síntese de Fala: Utiliza a biblioteca pyttsx3 para fornecer respostas audíveis.
 
-## Installation
+Navegação na Web: Abre sites específicos com base nos comandos fornecidos.
 
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/Chico-wh/W0rst_chatbot
+Agendamento de Compromissos: Permite que o usuário agende eventos e recebe notificações quando o evento está próximo.
 
+Notificações: Utiliza a biblioteca plyer para enviar notificações do sistema.
+
+Animação Miku: Exibe uma arte ASCII da Miku no console.
+
+Instalação
+Para instalar as dependências necessárias, utilize o seguinte comando:
+
+bash
+pip install speechrecognition pyttsx3 webbrowser plyer threading requests
+Como Usar
+Execute o script principal:
+
+bash
+python miku_assistant.py
+Siga as instruções de voz fornecidas no console para interagir com o assistente Miku.
+
+Exemplos de Comandos
+Pesquisar [termo]: Pesquisa o termo fornecido no Google.
+
+Twitter: Abre o site do Twitter.
+
+Notícias ou Globo: Abre o site de notícias Globo.
+
+Agendar [evento]: Agenda um novo evento.
+
+Melhor música: Toca uma música específica.
+
+Triste ou Me anima: Toca uma música animada para levantar o seu humor.
+
+Estrutura do Código
+limpar_tela(): Limpa o console.
+
+FalaRecon(): Função que reconhece a fala do usuário.
+
+comando(comandos): Função que processa os comandos reconhecidos e executa as ações correspondentes.
+
+Leragenda(): Função que verifica e notifica os eventos agendados.
+
+PrintMiku(): Função que imprime a arte ASCII da Miku.
+
+Contribuições
+Contribuições são bem-vindas! Sinta-se à vontade para fazer um fork do projeto e enviar pull requests.
+
+Licença
+Este projeto é licenciado sob os termos da licença MIT.
