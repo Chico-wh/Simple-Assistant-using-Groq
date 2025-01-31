@@ -20,8 +20,8 @@ def FalaRecon():
     recognizer = sr.Recognizer()
 
     with sr.Microphone() as source:
-        print("Diga algo:")
-        audio = recognizer.listen(source, phrase_time_limit=100,timeout=10)
+        print("Diga algo pra Miku fazer:")
+        audio = recognizer.listen(source, phrase_time_limit=100)
 
     try:
         comandos = recognizer.recognize_google(audio, language='pt-BR').lower()
@@ -34,12 +34,13 @@ def FalaRecon():
         print("Erro ao solicitar resultados; {0}".format(e))
         return None
 
+
 def comando(comandos):
     if comandos is None:
         return
 
     if 'pesquisar' in comandos or 'google' in comandos:
-        url = f"https://www.google.com/search?q={comandos.replace('pesquisar ', '')}"
+        url = f"https://www.google.com/search?q={comandos}"
         webbrowser.open(url)
     elif 'twitter' in comandos:
         url = "https://www.twitter.com/"
@@ -50,6 +51,9 @@ def comando(comandos):
         url = "https://www.globo.com/"
         webbrowser.open(url)
         resposta.say('Abrindo o Globo...')
+        resposta.runAndWait()
+    elif 'não'in comandos or 'errado' in comandos:
+        resposta.say('Desculpe, não conheço essa opção.')
         resposta.runAndWait()
     elif 'agendar' in comandos or 'marcar' in comandos:
         resposta.say('Me diga o nome do evento por favor...')
@@ -76,6 +80,14 @@ def comando(comandos):
         resposta.runAndWait()
     elif 'compromissos' in comandos:
         threading.Thread(target=Leragenda).start()
+    elif 'triste' in comandos or 'me anima' in comandos:
+        resposta.say('Eu sei exatamente oque fazer, RE-CE-BA a felicidade ')
+        resposta.runAndWait()
+        felicidade = "C:/Users/felip/Downloads/Hatsune Miku - Ievan Polkka.mp4"
+        os.startfile(felicidade)
+    else:
+        resposta.say('Não sei fazer isso, mas posso te ajudar.')
+        resposta.runAndWait()
 
 def Leragenda():
     import time
@@ -87,13 +99,32 @@ def Leragenda():
                 if data == hora_atual:
                     notification.notify(title=f'{nome}', message=f'Nome: {nome}, Data: {data}, Hora: {hora}')
         time.sleep(60)
-
+def PrintMiku():
+  print(  """⠀⠀⠀⠀⠀⢀⠤⠒⠒⠒⠒⠒⠠⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⡞⡽⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢯⢳⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣔⣻⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⠢⡀⠀⠀⠀⠀
+⠀⠀⢀⣾⣿⣶⡆⠀⠀⢐⡄⠀⠀⠀⠀⠐⠳⡀⠀⢸⣇⣧⡐⠀⠀⠀⠀⠀⠀
+⠀⢠⠏⠀⢹⣿⡇⠀⠀⠇⢀⢂⠀⠀⠀⡃⢀⠀⠘⣦⢸⡿⡟⠋⠁⡀⠀⠀⠀
+⠀⡋⠀⠀⠀⢹⣷⡀⡸⠀⠻⠀⠈⠒⠤⠃⠿⠀⢀⠻⣼⡇⠀⠀⠀⠀⢂⠀⠀
+⢀⠀⠀⠀⠀⠈⣿⠱⣿⣅⠀⠀⠸⣉⡹⠀⠀⢀⠞⡼⠀⣿⡀⠀⠀⠀⠀⠐⠀
+⠀⠀⠀⠀⠀⠀⣿⠀⢣⠀⠍⢶⣦⠤⢤⣖⠾⠠⣀⠇⠀⢹⡇⠀⠀⠀⠀⠀⠡
+⡁⠀⠀⠀⢀⡴⣏⣴⡑⣀⣴⠂⢸⠤⠼⡀⠱⡤⡨⢳⣦⣸⣷⠀⠀⠀⠀⠀⢡
+⠅⠀⠀⣴⡟⢷⣾⣿⡷⠳⠃⢠⠃⠀⠀⢣⣀⠡⡙⣿⣿⣿⠛⣦⡀⠀⠀⠀⢰
+⠂⠀⣼⡯⠃⠢⠽⠋⡴⠧⣀⡣⡀⠀⠀⢈⢄⣭⣇⠘⠿⠕⠥⠜⠻⠦⣀⠀⡇
+⠀⠉⠁⠀⠀⠀⡊⠉⢙⣿⡾⡶⠾⠶⣾⢕⢿⠟⠀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠉
+⠀⠀⠀⠀⠀⠀⠐⢀⠼⠃⠀⠉⠉⠀⠂⠀⠈⠣⠄⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀
+      ♡⠀miku miku oo ee oo ♡⠀""")
 if __name__ == '__main__':
     import time
     while True:
+        #preciso falar mais?????MIKUUUUU
+        PrintMiku()
         # Reconhece e executa os comandos
-        comandos = FalaRecon()
-        comando(comandos)
+        comandos = [FalaRecon()]
+        comando(comandos[0])
         # Faz a reconhecimento de fala a cada 1 segundo e executa o comando correspondente
         time.sleep(1)
         limpar_tela()
+        comandos.clear() 
+        
