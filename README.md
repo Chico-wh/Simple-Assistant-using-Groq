@@ -1,4 +1,4 @@
-# W0rst_chatbot
+# MIKU CHATbot
 # Speech Recognition Assistant
 
 Este projeto é um assistente virtual controlado por voz chamado Miku. O Miku pode executar várias tarefas baseadas em comandos de voz, como pesquisar na web, abrir sites, agendar compromissos e tocar música.
