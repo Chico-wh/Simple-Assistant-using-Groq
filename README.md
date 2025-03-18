@@ -5,12 +5,12 @@ Este projeto é um assistente virtual que realiza diversas tarefas como reconhec
 - **Reconhecimento de Fala**: Utiliza a biblioteca `speech_recognition` para captar e interpretar comandos de voz.
 - **Conversação**: Usa a classe `Brain` para gerar respostas de conversação usando um modelo de linguagem.
 - **Notificações de Compromissos**: Lê um arquivo CSV de compromissos e notifica o usuário quando um evento está próximo.
-- **Interação Visual**: Desenha formas e imagens usando a biblioteca `opencv`.
+
 
 ## Requisitos
 
 - Python 3.x
-- Bibliotecas: `speech_recognition`, `pyttsx3`, `opencv-python`, `numpy`, `plyer`, `requests`
+- Bibliotecas: `speech_recognition`, `pyttsx3`, `opencv-python`, `plyer`, `requests`
 
 ## Instalação
 
@@ -34,8 +34,6 @@ python main.py
 
 - `functions.py`: Contém funções para reconhecimento de fala e processamento de comandos.
 - `Brain.py`: Define a classe `Brain` para lidar com interações de conversação.
-- `drawning.py`: Scripts para desenhar formas e imagens.
-- `app.py`: Manipulação de matrizes e cálculos.
 - `agenda.csv`: Arquivo CSV utilizado para gerenciar compromissos.
 
 ## Contribuição
