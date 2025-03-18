@@ -1,59 +1,47 @@
-# MIKU CHATbot
-# Speech Recognition Assistant
+Este projeto é um assistente virtual que realiza diversas tarefas como reconhecimento de fala, interação com o usuário através de conversas, e notificações de compromissos.
 
-Este projeto é um assistente virtual controlado por voz chamado Miku. O Miku pode executar várias tarefas baseadas em comandos de voz, como pesquisar na web, abrir sites, agendar compromissos e tocar música.
+## Funcionalidades
 
-Funcionalidades
-Reconhecimento de Fala: Utiliza a biblioteca speech_recognition para interpretar comandos de voz.
+- **Reconhecimento de Fala**: Utiliza a biblioteca `speech_recognition` para captar e interpretar comandos de voz.
+- **Conversação**: Usa a classe `Brain` para gerar respostas de conversação usando um modelo de linguagem.
+- **Notificações de Compromissos**: Lê um arquivo CSV de compromissos e notifica o usuário quando um evento está próximo.
+- **Interação Visual**: Desenha formas e imagens usando a biblioteca `opencv`.
 
-Síntese de Fala: Utiliza a biblioteca pyttsx3 para fornecer respostas audíveis.
+## Requisitos
 
-Navegação na Web: Abre sites específicos com base nos comandos fornecidos.
+- Python 3.x
+- Bibliotecas: `speech_recognition`, `pyttsx3`, `opencv-python`, `numpy`, `plyer`, `requests`
 
-Agendamento de Compromissos: Permite que o usuário agende eventos e recebe notificações quando o evento está próximo.
+## Instalação
 
-Notificações: Utiliza a biblioteca plyer para enviar notificações do sistema.
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/projeto-assistente.git
+   ```
+2. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Animação Miku: Exibe uma arte ASCII da Miku no console.
+## Execução
 
-Instalação
-Para instalar as dependências necessárias, utilize o seguinte comando:
+Para iniciar o assistente, execute o arquivo `main.py`:
+```bash
+python main.py
+```
 
-bash
-pip install speechrecognition pyttsx3 webbrowser plyer threading requests
-Como Usar
-Execute o script principal:
+## Estrutura do Projeto
 
-bash
-python miku_assistant.py
-Siga as instruções de voz fornecidas no console para interagir com o assistente Miku.
+- `functions.py`: Contém funções para reconhecimento de fala e processamento de comandos.
+- `Brain.py`: Define a classe `Brain` para lidar com interações de conversação.
+- `drawning.py`: Scripts para desenhar formas e imagens.
+- `app.py`: Manipulação de matrizes e cálculos.
+- `agenda.csv`: Arquivo CSV utilizado para gerenciar compromissos.
 
-Exemplos de Comandos
-Pesquisar [termo]: Pesquisa o termo fornecido no Google.
+## Contribuição
 
-Twitter: Abre o site do Twitter.
+Sinta-se à vontade para contribuir com o projeto, enviando pull requests ou relatando issues.
 
-Notícias ou Globo: Abre o site de notícias Globo.
+## Licença
 
-Agendar [evento]: Agenda um novo evento.
-
-Melhor música: Toca uma música específica.
-
-Triste ou Me anima: Toca uma música animada para levantar o seu humor.
-
-Estrutura do Código
-limpar_tela(): Limpa o console.
-
-FalaRecon(): Função que reconhece a fala do usuário.
-
-comando(comandos): Função que processa os comandos reconhecidos e executa as ações correspondentes.
-
-Leragenda(): Função que verifica e notifica os eventos agendados.
-
-PrintMiku(): Função que imprime a arte ASCII da Miku.
-
-Contribuições
-Contribuições são bem-vindas! Sinta-se à vontade para fazer um fork do projeto e enviar pull requests.
-
-Licença
-Este projeto é licenciado sob os termos da licença MIT.
+Este projeto está licenciado sob a licença MIT.
